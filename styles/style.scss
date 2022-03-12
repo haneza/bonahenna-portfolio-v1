@@ -1,0 +1,704 @@
+$color-primaryBg: #f1dbcc;
+$color-secondaryBg: #cb6d6a;
+$color-hooverLink: #ca998e;
+$color-primaryText: #2b2929;
+$color-secondaryText: white;
+
+@import "./about";
+@import "./tattoo";
+@import "./design";
+@import "./shop";
+@import "./blog";
+@import "./contact";
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-primaryBg;
+  color: $color-primaryText;
+  font-family: "Bona Nova", serif;
+  width: 100%;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+a {
+  color: $color-primaryText;
+  text-decoration: none;
+  &:hover {
+    color: $color-hooverLink;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  scroll-margin-top: 100px;
+  //height: 100vh;
+  width: 100%;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.navbar {
+  display: flex;
+  background: $color-primaryBg;
+  z-index: 999;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+
+    .logo-text {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      color: $color-primaryText;
+    }
+  }
+
+  .nav-links {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mobile-menu {
+    background-color: $color-secondaryBg;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    clip-path: circle(100px at 100% 100%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+
+    li {
+      padding-top: 2rem;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    li.fade {
+      opacity: 1;
+    }
+
+    li a {
+      font-size: 2rem;
+      color: $color-secondaryText;
+      font-weight: 700;
+      transition: all 0.5s ease 0.1s;
+
+      &:hover {
+        color: $color-hooverLink;
+      }
+    }
+  }
+
+  .mobile-menu.open {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(600px at 100% -10%);
+    pointer-events: all;
+    z-index: -20;
+  }
+
+  .mobile-menu-exit {
+    display: none;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 50px;
+    right: 45px;
+    cursor: pointer;
+  }
+}
+
+main {
+}
+
+.container {
+  margin: 56px 17.5px 0px;
+  padding: 0px 96px;
+
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    margin-top: 2rem;
+  }
+  .about-cta {
+    margin-top: 1rem;
+  }
+
+  .tattoo-cta {
+    margin-top: 1rem;
+  }
+
+  .design-cta {
+    margin-top: 1rem;
+  }
+}
+
+section {
+  //height: 100vh;
+  width: 100%;
+}
+
+.logo {
+  width: 10rem;
+  height: 10rem;
+}
+
+.btn {
+  background: $color-secondaryBg;
+  color: $color-secondaryText;
+  text-decoration: none;
+  padding: 0.6em 1.3em;
+  font-size: 1.4em;
+  border-radius: 5em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.left-side {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+    margin-left: 20rem;
+    text-align: center;
+    margin: 0px;
+  }
+  .hero-cta {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+  }
+}
+
+.hero-section {
+  margin: 56px 17.5px 0px;
+  padding: 0px 96px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  //padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 100vh;
+
+  #logo {
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    animation: fadein 5s cubic-bezier(0.39, -1.05, 0.58, 1.95);
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: scale3d(0.75, 0.75, 1);
+    }
+    70% {
+      opacity: 0;
+      transform: scale3d(0.75, 0.75, 1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale3d(1.1, 1);
+    }
+  }
+
+  #logo-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fill 0.5s ease forwards 3.5s;
+  }
+
+  #logo-animation path:nth-child(1) {
+    stroke-dasharray: 560;
+    stroke-dashoffset: 560;
+    animation: line-anim 2s ease forwards 0.3s;
+  }
+  #logo-animation path:nth-child(2) {
+    stroke-dasharray: 427;
+    stroke-dashoffset: 427;
+    animation: line-anim 2s ease forwards 0.6s;
+  }
+  #logo-animation path:nth-child(3) {
+    stroke-dasharray: 412;
+    stroke-dashoffset: 412;
+    animation: line-anim 2s ease forwards 0.9s;
+  }
+  #logo-animation path:nth-child(4) {
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: line-anim 2s ease forwards 1.2s;
+  }
+  #logo-animation path:nth-child(5) {
+    stroke-dasharray: 473;
+    stroke-dashoffset: 473;
+    animation: line-anim 2s ease forwards 1.5s;
+  }
+  #logo-animation path:nth-child(6) {
+    stroke-dasharray: 495;
+    stroke-dashoffset: 495;
+    animation: line-anim 2s ease forwards 1.8s;
+  }
+  #logo-animation path:nth-child(7) {
+    stroke-dasharray: 412;
+    stroke-dashoffset: 412;
+    animation: line-anim 2s ease forwards 2.1s;
+  }
+  #logo-animation path:nth-child(8) {
+    stroke-dasharray: 412;
+    stroke-dashoffset: 412;
+    animation: line-anim 2s ease forwards 2.4s;
+  }
+  #logo-animation path:nth-child(9) {
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: line-anim 2s ease forwards 2.7s;
+  }
+
+  @keyframes line-anim {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fill {
+    from {
+      fill: transparent;
+    }
+    to {
+      fill: #cb6d6a;
+    }
+  }
+}
+
+.about-section,
+.tattoo-section,
+.design-section {
+  display: flex;
+  flex-direction: column;
+  .left-col {
+    h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.3em;
+      text-align: center;
+      margin-left: -2rem;
+    }
+
+    article {
+      font-size: 2rem;
+      width: 100%;
+      margin: auto;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+    }
+  }
+
+  img {
+    width: 100%;
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+  }
+}
+
+@media (min-width: 930px) {
+  #logo-animation {
+    width: 810px;
+    height: 110px;
+  }
+  .about-section,
+  .design-section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: " content profile";
+  }
+
+  .left-col {
+    position: absolute;
+    top: 0;
+    right: 0;
+    grid-area: content;
+    text-align: left;
+    align-self: center;
+    margin-left: 2rem;
+  }
+
+  img {
+    grid-area: profile;
+  }
+
+  .tattoo-section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: " profile content";
+  }
+
+  .left-col {
+    position: absolute;
+    top: 0;
+    right: 0;
+    grid-area: content;
+    text-align: left;
+    align-self: center;
+    margin-left: 2rem;
+  }
+
+  img {
+    grid-area: profile;
+  }
+}
+
+.contact-section {
+  //margin-top: 5rem;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .contact-box {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+  }
+
+  .left {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 2rem;
+    h2 {
+      position: relative;
+      padding: 0 0 10px;
+      margin-bottom: 10px;
+    }
+
+    h2:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      height: 4px;
+      width: 50px;
+      border-radius: 2px;
+      background-color: $color-secondaryBg;
+    }
+    .phone {
+      font-family: "Montserrat", sans-serif;
+    }
+  }
+
+  .right {
+    padding: 25px 40px;
+  }
+
+  .field {
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: 0.3s;
+  }
+
+  .field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  .message-btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: $color-secondaryBg;
+    color: $color-secondaryText;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5rem;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .message-btn:hover {
+    color: $color-hooverLink;
+  }
+
+  .field:focus {
+    border: 2px solid #cb6d6a;
+    background-color: #fff;
+  }
+
+  @media screen and (max-width: 880px) {
+    .contact-box {
+      grid-template-columns: 1fr;
+    }
+    .left {
+      height: 200px;
+    }
+  }
+}
+
+footer {
+  background: $color-secondaryBg;
+  color: $color-primaryText;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 2rem 2rem 2rem 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a i {
+      font-size: 3rem;
+      margin: 0 5px;
+    }
+  }
+
+  .footer-bottom {
+    color: $color-primaryText;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+
+    p {
+      font-size: 1.4rem;
+      word-spacing: 0.2rem;
+      text-transform: capitalize;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .logo {
+      font-family: "Montserrat", sans-serif;
+      text-transform: lowercase;
+    }
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  #logo-animation {
+    width: 810px;
+    height: 110px;
+  }
+  .mobile-menu,
+  .mobile-menu-exit,
+  .hamburger {
+    display: none;
+    visibility: hidden;
+  }
+
+  .navbar {
+    background: #f1dbcc;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      font-size: 3rem;
+    }
+
+    .nav-links {
+      visibility: visible;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-left: 80px;
+
+      // justify-content: space-evenly;
+      width: 100%;
+    }
+
+    .nav-links a {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+}
+
+// @media screen and (min-width: 1024px) {
+//   .menu-links {
+//     display: block;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//     // visibility: hidden;
+//   }
+
+//   .container {
+//     max-width: 1024px;
+//   }
+// }
+
+// @media screen and (min-width: 768px) {
+//   body {
+//     margin: auto;
+//   }
+
+//   .menu-links {
+//     position: absolute;
+//     top: 10.6rem;
+//     right: 0;
+//     height: 100vh;
+//     background-color: #cb6d6a;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 100%;
+//     display: none;
+//     // visibility: hidden;
+//   }
+//   .menu-links a {
+//     color: white;
+//     &:hover {
+//       color: #ca998e;
+//     }
+//   }
+
+//   .mobile-menu-exit {
+//     display: none;
+//     position: absolute;
+//     top: 50px;
+//     right: 45px;
+//   }
+//   .logo-container {
+//     width: 100%;
+//     margin-left: 1rem;
+//   }
+
+//   .hero-section {
+//     .left-side {
+//       display: block;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//     h1 {
+//       display: block;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//   }
+
+//   .container {
+//     max-width: 768px;
+//   }
+// }
+
+// @media screen and (max-width: 880px) {
+// }

@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  margin-top: 5rem;
+
+  .contact-section {
+    margin-top: 5rem;
+    h2 {
+      margin-top: 5rem;
+      text-align: center;
+    }
+
+    .contact-box {
+      margin-left: auto;
+      margin-right: auto;
+
+      .phone {
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+  }
+
+  .social-icons-card {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+
+    li a {
+      padding: 0.5rem 1rem;
+    }
+  }
+}

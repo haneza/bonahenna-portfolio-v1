@@ -1,0 +1,50 @@
+.design-container {
+  height: 100vh;
+  width: 100%;
+  margin-top: 12rem;
+
+  .text-col {
+    h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.3em;
+      text-align: center;
+      margin-left: -2rem;
+    }
+
+    article {
+      font-size: 2rem;
+      width: 50%;
+      margin: auto;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+    }
+  }
+
+  img {
+    width: 50%;
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+  }
+}
+
+@media (min-width: 930px) {
+  section.design {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: " profile content";
+  }
+
+  .left-col {
+    grid-area: content;
+    text-align: left;
+    align-self: center;
+  }
+
+  img {
+    grid-area: profile;
+  }
+}
